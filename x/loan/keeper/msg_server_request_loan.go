@@ -15,7 +15,7 @@ func (k msgServer) RequestLoan(goCtx context.Context, msg *types.MsgRequestLoan)
 		Fee:        msg.Fee,
 		Collateral: msg.Collateral,
 		Deadline:   msg.Deadline,
-		State:      "request",
+		State:      types.Request,
 		Borrower:   msg.Creator,
 	}
 

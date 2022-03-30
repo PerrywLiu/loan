@@ -17,7 +17,7 @@ func (k msgServer) ApproveLoan(goCtx context.Context, msg *types.MsgApproveLoan)
 	}
 
 	//TODO: for some reason the err doesn't get printed to the terminal
-	if loan.State != "request" {
+	if loan.State != types.Request {
 		return nil, sdkerrors.Wrapf(types.ErrWrongLoanState, "%v", loan.State)
 	}
 
@@ -31,7 +31,7 @@ func (k msgServer) ApproveLoan(goCtx context.Context, msg *types.MsgApproveLoan)
 	k.bankKeeper.SendCoins(ctx, lender, borrower, amount)
 
 	loan.Lender = msg.Creator
-	loan.State = "approved"
+	loan.State = types.Approve
 
 	k.SetLoan(ctx, loan)
 

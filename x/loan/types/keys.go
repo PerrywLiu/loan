@@ -15,6 +15,12 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_loan"
+
+	Request   = "requested"
+	Approve   = "approved"
+	Liquidate = "liquidated"
+	Cancel    = "canceled"
+	Repay     = "repayed"
 )
 
 func KeyPrefix(p string) []byte {
