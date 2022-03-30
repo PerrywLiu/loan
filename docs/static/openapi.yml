@@ -27928,6 +27928,12 @@ definitions:
         type: string
       lender:
         type: string
+  cosmonaut.loan.loan.MsgApproveLoanResponse:
+    type: object
+  cosmonaut.loan.loan.MsgRepayLoanResponse:
+    type: object
+  cosmonaut.loan.loan.MsgRequestLoanResponse:
+    type: object
   cosmonaut.loan.loan.Params:
     type: object
     description: Params defines the parameters for the module.
